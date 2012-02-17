@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What Does It All Mean?</title>
+        <script src="speakClient.js"></script>
+        <script src="jquery.min.js"></script>
+        
+    </head>
+
+    <body>    
+        <h1>What Does It All Mean?</h1>
+    
+        <div>
+            <ul>
+                <li>The way something on the web looks is changeable</li>
+                <li>Browsers, authors, other programs, and users are able to influence how something is presented</li>
+                <li>A single structure can be <a href="http://www.csszengarden.com/">presented in myriad ways</a></li>
+                <li>The structure of the web is easily understood</li>
+                <li>Other programs can parse, manipulate, and represent the user interface</li>
+                <li>The web is naturally cross-platform, cross-device, and cross-presentation</li>
+            </ul>
+            
+            <div id="audio"></div>
+            <button id="read">This page is a screen reader</button>
+        <div>
+            <a href="12.html">Previous</a> <a href="14.html">Next</a>
+        </div>
+    </body>
+    
+    <script>
+        var elementNames = {
+            "h1": "heading level 1",
+            "div": "section",
+            "ul": "unordered list",
+            "li": "list item",
+            "a": "link",
+            "button": "button"
+        };
+        
+        function read(selector) {
+            var textToRead = ""
+            $(selector).each(function (i, el) {
+                var name = el.tagName.toLowerCase();
+                var label = elementNames[name];
+                
+                textToRead += label + ". "; 
+                if ($(el).children().length === 0) {
+                    textToRead += $(el).text() + ". ";
+                }
+            });
+            speak(textToRead);
+        };
+        
+        $("#read").click(function () {
+            read("body *:not('script')");
+        });
+    </script>
+    
+</html>

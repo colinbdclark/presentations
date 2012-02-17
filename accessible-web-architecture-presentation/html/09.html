@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Declarative Programming Illustrated</title>
+    </head>
+
+    <body>    
+        <h1>Declarative Programming Illustrated</h1>
+    
+        <div>
+            <pre>
+                &lt;button&gt;OK&lt;/button&gt;
+            </pre>
+
+            vs. 
+            
+            <pre>
+                place pen at 10, 10;
+                draw grey line to 60, 10;
+                draw grey line to 60, 30;
+                draw grey line to 10, 30;
+                draw grey line to 10, 10;
+                
+                draw text "OK" in black;
+                
+                if user clicks {
+                    redraw button so it looks pressed;
+                }
+                
+                when user releases mouse {
+                    redraw button so it doesn't look pressed anymore;
+                    do something really important;
+                }
+        </div>
+        
+        <div>
+            <a href="08.html">Previous</a> <a href="10.html">Next</a>
+        </div>
+    </body>
+
+</html>
