@@ -1,0 +1,27 @@
+body {
+    color: #333333;
+    text-align: center;
+    font-size: 2em;
+}
+
+pre {
+    text-align: left;
+}
+
+h1 {
+    font-size: 1.8em;
+    padding-bottom: 1.5em;
+}
+
+li {
+    text-align: left;
+    margin-left: 2em;
+    line-height: 2.2em;
+}
+
+.nav {
+    text-align: right;
+    vertical-align: baseline;
+    font-size: .9em;
+    padding: 4em;
+}
